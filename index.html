@@ -1,1 +1,77 @@
-<h1> DOM Play </h1>
+<html>
+    <head>
+       
+    </head>
+    <link id="mainStylesheet" rel="stylesheet" href="css/default.css" />
+    <style type="text/css">
+     </style>
+
+
+    <body>
+<h1>DOM Play</h1>
+        <div id="play">
+       <p><span data-actor="brian">Brian (observes Shaw eating): I hope you're enjoying your last meal.</span></p>
+       <p><span data-actor="dom">Dom (approaches Shaw): I'm ready to meet my maker, are you?</span></p>
+       <p><span data-actor="shaw">Shaw: Have you ever heard the saying, the enemy of my enemy is my friend?</span></p>
+       <p><span data-actor="dom">Dom: I don't have friends. I got FAMILY.</span></p>
+       <p><span data-actor="shaw">Shaw: Well, I've got a lot of friends.</span></p>
+       <p><span data-actor="brian">Brian: But family triumphs all.</span></p>
+    </div>
+    <img src="images/dom.jpeg" alt="Dom" class="flexible" id="logo"/>
+    <footer>
+        <small>&copy; 2020 - <span id="copyright">copyright goes here</span>, All Rights Reserved ~
+        <a href="https://validator.w3.org/check/referer" target="_blank">Valid HTML</a> ~
+        <a href="https://jigsaw.w3.org/css-validator/check?uri=referer" target="_blank">Valid CSS</a>
+        </small>
+      </footer>
+    
+        <script>
+
+            const spans = document.querySelectorAll('div#play span'); 
+
+           
+
+            for(const mySpan of spans){
+                mySpan.addEventListener('click',function(ev){
+                    //alert(mySpan.dataset.actor);
+                    highlightActor(mySpan.dataset.actor);
+
+
+                });
+
+            }
+
+            
+
+
+
+
+
+            function highlightActor(myActor){
+
+                for(const mySpan of spans)
+                {
+                    if(myActor == mySpan.dataset.actor) {
+                        mySpan.style.backgroundColor = 'white';
+                    } else {
+                        mySpan.style.backgroundColor = 'rgb(162, 210, 238)';
+                         }
+
+                };
+
+
+
+
+
+
+
+               
+                
+                
+                
+            }
+        </script>
+          
+    </body> 
+   
+</html>
